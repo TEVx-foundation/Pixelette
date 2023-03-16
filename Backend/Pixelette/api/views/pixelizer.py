@@ -607,7 +607,10 @@ def analyse(data: tuple):
 @csrf_exempt
 def encode(request):
 	if request.method == "POST":
-		data = request.POST["text"]
+		serializer = json.loads(request.body)
+		# print(request.POST)
+		# data = request.POST["text"]
+		data = serializer["text"]
 		reqHistory = History.objects.create()
 		bytecode(data)
 
