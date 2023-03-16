@@ -2,7 +2,7 @@ import math
 from PIL import Image
 import itertools
 
-DEBUG = 1
+DEBUG = 0
 
 ''' Words and alphabhet data-mapping using dictionary
     along with their flagging code points binded to a dictionary. '''
