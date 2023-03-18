@@ -1,3 +1,4 @@
 {
     "data": "{{ data }}",
+    "algo_ver": "beta1.7"
 }
