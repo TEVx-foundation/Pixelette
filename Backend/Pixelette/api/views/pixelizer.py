@@ -403,10 +403,12 @@ def bytecode(data: str, delimiter: str = " "):
 		if (DEBUG):
 			print("Data element: ", d)
 
-		if (d.lower() in dbwords):
+		_listx = list(i for i in db if db[i] == d.lower())
+		if (d.lower() in dbwords and len(_listx) != 0):
 			if (DEBUG):
 				print("Word present: ", d.lower())
-			value = list(i for i in db if db[i] == d.lower())[0]
+				print("Word code: ", _listx[0])
+			value = _listx[0]
 			if (d.istitle()):
 				final_data.append(156)
 				final_data.append(value)
@@ -422,6 +424,7 @@ def bytecode(data: str, delimiter: str = " "):
 				print(":: Delimiter adding: ", delimiter_code, ", Letter: ", d)
 			final_data.append(delimiter_code)
 			for letter in d:
+				print("Letter: ", letter)
 				_ = list(i for i in db if db[i] == letter)
 				final_data.append(_[-1])
 				if (DEBUG):
