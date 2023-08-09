@@ -1,0 +1,6 @@
+{
+  "appId": "vue.nuxt",
+  "appName": "vue-nuxt",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
